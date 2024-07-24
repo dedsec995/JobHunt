@@ -17,7 +17,7 @@
     "128":"icons/icon128.png"
   },
   "oauth2": {
-    "client_id": "160443428525-qhfdji8ldb433rs0n5tj8u28fmovto3t.apps.googleusercontent.com",
+    "client_id": "YOUR_CLIENT_ID.apps.googleusercontent.com",
     "scopes": [
       "https://www.googleapis.com/auth/spreadsheets"
     ]
