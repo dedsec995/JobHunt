@@ -1,4 +1,5 @@
 client_secret.json
+tmp/
 # Logs
 logs
 *.log

@@ -19,6 +19,7 @@ This project is a Chrome extension that allows users to track job applications a
 
 The folder structure for the extension is as follows:
 
+```
 job-hunt/
 ├── manifest.json # Chrome extension manifest file
 ├── popup.html # HTML file for the popup
@@ -30,6 +31,7 @@ job-hunt/
     |----icon48.png # Icon for the extension
     |----icon128.png # Icon for the extension
 └── README.md # This README file
+```
 
 ## Google Cloud Setup
 
