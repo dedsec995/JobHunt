@@ -1,4 +1,9 @@
-# JobHunt
+<h1 align="center">JobHunt</h1>
+
+<p align="center">
+<img width="33%" src="images/ui.png?raw=true">
+</p>
+
 
 This project is a Chrome extension that allows users to track job applications and save them to a Google Spreadsheet. This README provides a step-by-step guide to set up the Google Cloud project and the folder structure for the extension.
 
