@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Job Application Tracker</title>
+        <title>Job Hunt</title>
         <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body>
-        <h1>Job Application Tracker</h1>
+        <h1>Job Hunt</h1>
         <div id="auth-container">
             <button id="auth-button">Authenticate</button>
         </div>
@@ -15,11 +15,18 @@
         </div>
         <div id="form-container" style="display: none;">
             <form id="job-form">
-                <input type="text" id="position" placeholder="Position" required>
-                <input type="text" id="title" placeholder="Title" required>
+                <input type="text" id="company" placeholder="Company" required>
+                <input type="text" id="title" placeholder="Position Title" required>
                 <input type="url" id="url" placeholder="URL" required>
                 <input type="datetime-local" id="datetime" required>
                 <textarea id="description" placeholder="Description"></textarea>
+                <select id="status" required>
+                    <option value="Applied" selected>Applied</option>
+                    <option value="WishList"> Wish List</option>
+                    <option value="Interviewing">Interviewing</option>
+                    <option value="Offered">Offered</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
                 <button type="submit">Save</button>
             </form>
         </div>

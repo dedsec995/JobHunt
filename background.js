@@ -1,7 +1,7 @@
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.action === 'saveJobApplication') {
     saveToSpreadsheet(request.data, sendResponse);
-    return true; // Indicates that the response is asynchronous
+    return true;
   }
 });
 
@@ -12,9 +12,9 @@ function saveToSpreadsheet(data, sendResponse) {
       return;
     }
 
-    const { spreadsheetId, position, title, url, datetime, description, status } = data;
+    const { spreadsheetId, company, title, url, datetime, description, status } = data;
     const range = 'Sheet1!A1:G1';
-    const values = [[position, title, url, datetime, description, status]];
+    const values = [[company, title, url, datetime, description, status]];
 
     fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}:append?valueInputOption=USER_ENTERED`, {
       method: 'POST',

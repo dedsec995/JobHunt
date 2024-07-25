@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const saveSpreadsheetIdButton = document.getElementById('save-spreadsheet-id');
   const datetimeInput = document.getElementById('datetime');
   const urlInput = document.getElementById('url');
+  const statusSelect = document.getElementById('status');
 
   authButton.addEventListener('click', authenticate);
   saveSpreadsheetIdButton.addEventListener('click', saveSpreadsheetId);
@@ -76,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
       if (tabs.length > 0) {
         const currentTabUrl = tabs[0].url;
-        urlInput.value = currentTabUrl; // Set the current tab's URL as default
+        urlInput.value = currentTabUrl;
       }
     });
   }
@@ -85,22 +86,23 @@ document.addEventListener('DOMContentLoaded', function() {
     event.preventDefault();
     chrome.storage.sync.get('spreadsheetId', function(data) {
       const spreadsheetId = data.spreadsheetId;
-      const position = document.getElementById('position').value;
+      const company = document.getElementById('company').value;
       const title = document.getElementById('title').value;
       const url = document.getElementById('url').value;
       const datetime = document.getElementById('datetime').value;
       const description = document.getElementById('description').value;
-      const status = 'Applied';
+      const status = statusSelect.value;
 
       chrome.runtime.sendMessage({
         action: 'saveJobApplication',
-        data: { spreadsheetId, position, title, url, datetime, description, status }
+        data: { spreadsheetId, company, title, url, datetime, description, status }
       }, function(response) {
         if (response.success) {
           alert('Job application saved successfully!');
           jobForm.reset();
-          setDefaultDateTime(); // Reset the datetime to current after form submission
-          setDefaultUrl(); // Reset the URL to current tab's URL after form submission
+          setDefaultDateTime(); 
+          setDefaultUrl();
+          statusSelect.value = 'Applied'; 
         } else {
           alert('Error saving job application: ' + response.error);
         }
