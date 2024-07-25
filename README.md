@@ -12,8 +12,9 @@ This project is a Chrome extension that allows users to track job applications a
 
 ## Prerequisites
 
-- Node.js and npm installed on your machine.
 - A Google account to access Google Cloud Console.
+- New Google Spreadsheet.
+- A Chrome Browser :)
 
 ## Folder Structure
 
