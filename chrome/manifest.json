@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Job Hunt",
+  "version": "0.1",
+  "description": "Track job applications and save them to a Google Spreadsheet",
+  "permissions": ["identity", "storage", "tabs"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/icon16.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128":"icons/icon128.png"
+  },
+  "oauth2": {
+    "client_id": "160443428525-jpqu7uvoqm1ffsnoa211lej54c24c2g4.apps.googleusercontent.com",
+    "scopes": ["https://www.googleapis.com/auth/spreadsheets"]
+  }
+}
